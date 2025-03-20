@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Google Sheets API Demo</title>
+    <link rel="stylesheet" href="css/style.css">
+    <script src="https://apis.google.com/js/api.js"></script>
+</head>
+
+<body>
+    <div class="container">
+        <h1>Google Sheets API Demo</h1>
+
+        <div id="auth-status" class="status-box">
+            <p id="auth-message">Please sign in to continue</p>
+            <button id="auth-button" onclick="handleAuthClick()">Sign In</button>
+        </div>
+
+        <div id="sheet-controls" class="controls hidden">
+            <div class="input-group">
+                <label for="spreadsheet-id">Spreadsheet ID:</label>
+                <input type="text" id="spreadsheet-id" placeholder="Enter spreadsheet ID">
+                <p class="help-text">Find this in your spreadsheet URL:
+                    docs.google.com/spreadsheets/d/<strong>spreadsheet-id</strong>/edit</p>
+            </div>
+
+            <div class="button-group">
+                <button onclick="readSheet()">Read Sheet</button>
+                <button onclick="updateSheet()">Update Sheet</button>
+            </div>
+        </div>
+
+        <div id="result" class="result-box hidden">
+            <h3>Results</h3>
+            <pre id="result-content"></pre>
+        </div>
+    </div>
+
+    <script src="js/auth.js"></script>
+    <script src="js/sheets.js"></script>
+</body>
+
+</html>
