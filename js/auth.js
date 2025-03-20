@@ -2,6 +2,9 @@
 const CLIENT_ID = '298342505049-2ols5ik9rm203t0gpi6197qbepol76lj.apps.googleusercontent.com';
 const API_KEY = 'AIzaSyAi793WvSaPX2oO62cHjauQwRWtRmD47k0';
 
+// Get the redirect URI from the current location
+const REDIRECT_URI = window.location.origin + window.location.pathname;
+
 // Array of API discovery doc URLs for APIs used by the quickstart
 const DISCOVERY_DOCS = ['https://sheets.googleapis.com/$discovery/rest?version=v4'];
 
@@ -30,6 +33,7 @@ function gisLoaded() {
     tokenClient = google.accounts.oauth2.initTokenClient({
         client_id: CLIENT_ID,
         scope: SCOPES,
+        redirect_uri: REDIRECT_URI,
         callback: '', // defined later
     });
     gisInited = true;
@@ -73,9 +77,3 @@ function handleSignoutClick() {
         document.getElementById('result').classList.add('hidden');
     }
 }
-
-// Load the required Google API libraries
-document.write(
-    '<script async defer src="https://apis.google.com/js/api.js" onload="gapiLoaded()"></script>' +
-    '<script async defer src="https://accounts.google.com/gsi/client" onload="gisLoaded()"></script>'
-);
