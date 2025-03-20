@@ -1,6 +1,6 @@
 // Client ID and API key from the Google Cloud Console
-const CLIENT_ID = 'YOUR_CLIENT_ID';
-const API_KEY = 'YOUR_API_KEY';
+const CLIENT_ID = '298342505049-2ols5ik9rm203t0gpi6197qbepol76lj.apps.googleusercontent.com';
+const API_KEY = 'AIzaSyAi793WvSaPX2oO62cHjauQwRWtRmD47k0';
 
 // Array of API discovery doc URLs for APIs used by the quickstart
 const DISCOVERY_DOCS = ['https://sheets.googleapis.com/$discovery/rest?version=v4'];
